@@ -35,7 +35,11 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const totals = 0
+
+const summedPrice = cart.reduce(function (acc, obj) {return acc + obj.price; }, 0)
+
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -55,6 +59,14 @@ const cart = [
 
 //CODE HERE
 
+function calcFinalPrice(cartTotal, couponValue, tax) {
+    let x = cartTotal;
+    x *= (tax+1);
+    x -= couponValue;
+    return x;
+}
+
+// console.log(calcFinalPrice(842,100, 0.07))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -79,7 +91,15 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+    customer object should contain the following
+    name: string value
+    I chose name because this gives the customer a way to brand themselves and make sure they have the correct account pulled up. It's easiest if it's a string because that allows for it to be edited as well as the customer to input what they want
+    customer id: number value
+    This value is likely one that the customer won't see and if it's a number value it's easiest to keep in order when setting up on our side within the programming. 
+    address: string
+    Addresses are important for delivery as well as advertising and string because I don't see a good way to get this to save otherwise.
+    phone number: string
+    We need the customer's phone numnber in case anything goes wrong and we need to reach out to them about their order and I decided on string because it can be modified easier and changed into other formats if needed.
 */
 
 /*
@@ -88,3 +108,12 @@ const cart = [
 */
 
 //CODE HERE
+
+customers = [
+    {
+        name: "Trever Dudensmurfs",
+        customerId: 0001,
+        address: "5351 S Fake Street, Fake City FS, 55555",
+        phoneNumber: "555-555-5555",
+    }
+]
