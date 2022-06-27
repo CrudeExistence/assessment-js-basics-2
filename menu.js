@@ -128,11 +128,12 @@ const foodArr =
 //CODE HERE
 
 // const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-// const filteredFood = foodArr.filter(food => food.tags === "tasty")
-
-// const filteredFood = foodArr.filter(tagCheck => tagCheck.tags[] === "tasty");
+// const filteredFood = foodArr.filter(tag => { for (tag.tags === "tasty";) return foodArr.name} );
+// const filteredFood = foodArr.filter(checking => for (let )) {
+//     for (let i=1; )
+// }
 // console.log(filteredFood)
-// console.log(foodArr.name)
+console.log(foodArr.tags[0])
 
 
 //////////////////PROBLEM 5////////////////////
