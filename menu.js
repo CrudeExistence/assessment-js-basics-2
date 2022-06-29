@@ -104,13 +104,16 @@ let {category} = pizza
 //CODE HERE
 
 const foodArr = 
+[
     {
     name: "Opposite food",
     price: 99.43,
     category: "Choices of bottomfeeder food",
     popularity: 99,
-    tags: ["Last","Nasty","Salad","Not with toppings"],
+    rating: 2,
+    tags: ["Last","Nasty", "Salad","Not with toppings"],
 }
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -127,14 +130,16 @@ const foodArr =
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(function (acc, obj) {return acc === obj.tags; }, foodArr.name)
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-// const filteredFood = foodArr.filter(tag => { for (tag.tags === "tasty";) return foodArr.name} );
-// const filteredFood = foodArr.filter(checking => for (let )) {
-//     for (let i=1; )
-// }
-console.log(filteredFood)
-// console.log(foodArr.tags[0])
+
+
+const filteredFood = foodArr.filter((foodObj) => {
+    if(foodObj.tags.includes("Nasty")) {
+        return foodObj;
+    }
+    return "Food doesn't meet the requirements"
+})
+
+// console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -178,6 +183,29 @@ console.log(filteredFood)
 
 //CODE HERE
 
+const filterByProperty = (property, number, type) => {
+    filteredArr = [];
+    if (property === "price" || property === "popularity" || property === "rating") {
+        if (type === "above") {
+            foodArr.filter((foodObj) => {
+                if(foodObj[property] > number) {
+                    return filteredArr.push(foodObj)
+                }
+            })
+        } else if (type === "below") {
+            foodArr.filter((foodObj) => {
+                if(foodObj[property] < number) {
+                    return filteredArr.push(foodObj)
+                }
+            })
+        } else {
+            return console.log("type needs to be a value of 'above' or 'below' please check your input and try again.")
+        }
+    } else {
+        return console.log("Property isn't correct. Please update to be 'price' 'popularity' or 'rating'.")
+    }
+    return filteredArr
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -185,5 +213,7 @@ console.log(filteredFood)
 
     You'll have to console.log to see the filtered array
 */
+
+console.log(filterByProperty("rating", 3, "below"))
 
 //CODE HERE
